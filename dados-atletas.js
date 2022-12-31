@@ -9,58 +9,76 @@ class Atleta {
     }
 
     calculaCategoria(){
-        console.log
+        if (idade < 9 && idade > 30){
+            return 'Sem categoria'
+        } else if (idade <= 11){
+            return 'Infantil'
+        } else if (idade <= 13){
+            return 'Juvenil'
+        } else if (idade <= 15){
+            return 'Intermediário'
+        } else {
+            return 'Adulto'
+        }
     }
 
     calculaCategoria(){
 
+    calculaIMC(){
+        return "oi"
     }
 
     calculaMediaValida(){
-
+        return "ui"
     }
 
     obtemNomeAtleta(){
-        return this.nome
+        console.log(`Nome: ${this.nome}`)
     }
 
     obtemIdadeAtleta(){
-    
+        console.log(`Idade: ${this.idade}`)
     }
 
     obtemPesoAtleta(){
+        console.log(`Peso: ${this.peso}`)
+    }
 
+    obtemAlturaAtleta(){
+        console.log(`Altura: ${this.altura}`)
     }
 
     obtemNotasAtleta(){
-
+        console.log(`Notas: ${this.notas}`)
     }
 
     obtemCategoria(){
-        console.log('ois')
+        console.log(`Categoria: ${this.calculaCategoria()}`)
     }
 
     obtemIMC(){
-
+        console.log(`IMC: ${this.calculaIMC()}`)
     }
 
     obtemMediaValida(){
-
+        console.log(`Média Válida: ${this.calculaMediaValida()}`)
     }
 
-    especificacoes(){
-        console.log(
-            `
-            Nome: ${obtemNomeAtleta()}
-            `
-        )
-    }
+}
 
-    }
-
+function boletim(atleta){
+    atleta.obtemNomeAtleta()
+    atleta.obtemIdadeAtleta()
+    atleta.obtemPesoAtleta()
+    atleta.obtemAlturaAtleta()
+    atleta.obtemNotasAtleta()
+    atleta.obtemCategoria()
+    atleta.obtemIMC()
+    atleta.obtemMediaValida()
+}
 
 const atleta = new Atleta("Cesar Abascal", 30, 80, 1.70, [10, 9.34, 8.42, 10, 7.88])
-console.log(atleta.especificacoes())
+boletim(atleta)
 
 /*
 calculaCategoria(), para calcular a categoria do atleta;
