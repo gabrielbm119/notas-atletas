@@ -9,7 +9,7 @@ class Atleta {
     }
 
     calculaCategoria(){
-        if (this.idade < 9 && this.idade > 30){
+        if (this.idade < 9 || this.idade > 30){
             return 'Sem categoria'
         } else if (this.idade <= 11){
             return 'Infantil'
@@ -23,11 +23,16 @@ class Atleta {
     }
 
     calculaIMC(){
-        return "oi"
+        return this.peso / (this.altura * this.altura)
     }
 
     calculaMediaValida(){
-        return "ui"
+        let mediaValida = []
+        let lista = this.notas.sort((a, b) => a - b).slice(1,4)
+        mediaValida = lista.reduce((total, atual) => {
+            return total + atual
+        },0)
+        return mediaValida / lista.length
     }
 
     obtemNomeAtleta(){
