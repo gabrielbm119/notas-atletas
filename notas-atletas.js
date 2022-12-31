@@ -1,3 +1,36 @@
+function boletimAtleta(objAtletas){
+
+  let lista = []
+  let lista2 = []
+  let mediaFinal = []
+  for (let i = 0; i < objAtletas.length; i++){
+      lista.push(objAtletas[i].notas)
+      lista[i].sort((a, b) => a - b)
+    }      
+  
+  for (let i = 0; i < objAtletas.length; i++){
+    lista2 = lista.map((notaAtleta) => {
+      return notaAtleta.slice(1,4)
+    })
+  }
+  lista2.forEach((notasAtleta) => {
+    mediaFinal.push(notasAtleta.reduce((total,atual) => {
+      return total+atual
+    }) / notasAtleta.length )
+  })
+
+  for (let i = 0; i < objAtletas.length; i++){
+    console.log(
+      `
+Atleta: ${objAtletas[i].nome}
+Notas Obtidas: ${objAtletas[i].notas}
+Média Válida: ${mediaFinal[i]}
+`) 
+  }
+
+}
+
+
 
 
 
@@ -19,6 +52,10 @@ let atletas = [
       notas: [10, 10, 10, 9, 9.5]
     }
    ];
+
+
+   boletimAtleta(atletas)
+
 
 /*
 A saída deve ser:
