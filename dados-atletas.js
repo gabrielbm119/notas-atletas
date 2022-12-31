@@ -9,7 +9,7 @@ class Atleta {
     }
 
     calculaCategoria(){
-
+        console.log
     }
 
     calculaCategoria(){
@@ -21,11 +21,11 @@ class Atleta {
     }
 
     obtemNomeAtleta(){
-
+        return this.nome
     }
 
     obtemIdadeAtleta(){
-
+    
     }
 
     obtemPesoAtleta(){
@@ -48,10 +48,19 @@ class Atleta {
 
     }
 
-}
+    especificacoes(){
+        console.log(
+            `
+            Nome: ${obtemNomeAtleta()}
+            `
+        )
+    }
+
+    }
+
 
 const atleta = new Atleta("Cesar Abascal", 30, 80, 1.70, [10, 9.34, 8.42, 10, 7.88])
-console.log(atleta)
+console.log(atleta.especificacoes())
 
 /*
 calculaCategoria(), para calcular a categoria do atleta;
