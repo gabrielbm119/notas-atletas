@@ -9,13 +9,13 @@ class Atleta {
     }
 
     calculaCategoria(){
-        if (idade < 9 && idade > 30){
+        if (this.idade < 9 && this.idade > 30){
             return 'Sem categoria'
-        } else if (idade <= 11){
+        } else if (this.idade <= 11){
             return 'Infantil'
-        } else if (idade <= 13){
+        } else if (this.idade <= 13){
             return 'Juvenil'
-        } else if (idade <= 15){
+        } else if (this.idade <= 15){
             return 'Intermediário'
         } else {
             return 'Adulto'
