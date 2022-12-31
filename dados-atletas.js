@@ -22,8 +22,6 @@ class Atleta {
         }
     }
 
-    calculaCategoria(){
-
     calculaIMC(){
         return "oi"
     }
