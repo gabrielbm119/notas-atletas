@@ -8,6 +8,12 @@ class Atleta {
         this.notas = notas
     }
 
+/*
+A linha `this.nome = nome` está dizendo que a propriedade `nome` do objeto `Atleta` 
+(representado por `this`) deve ter o mesmo valor que o parâmetro `nome` fornecido 
+durante a criação da instância (`"Cesar Abascal"` no exemplo).
+*/
+    
     calculaCategoria(){
         if (this.idade < 9 || this.idade > 30){
             return 'Sem categoria'
@@ -34,6 +40,33 @@ class Atleta {
         },0)
         return mediaValida / lista.length
     }
+
+/*Vamos analisar o processo que o conjunto de notas do atletaExemplo passa na função 
+calculaMediaValida:
+
+Obtenção das Notas Originais:
+
+O objeto atletaExemplo é criado com notas fictícias: [8, 7, 9, 6, 10].
+A função obtemNotasAtleta exibe as notas originais no console.
+Ordenação das Notas em Ordem Crescente:
+
+this.notas.sort((a, b) => a - b) é usado para ordenar as notas em ordem crescente.
+Após a ordenação, as notas se tornam: [6, 7, 8, 9, 10].
+Seleção das Três Maiores Notas:
+
+slice(1, 4) é usado para criar uma subarray contendo as notas das posições 1, 2 e 3.
+A subarray resultante é [7, 8, 9], que são as três maiores notas.
+Cálculo da Média das Três Maiores Notas:
+
+reduce((total, atual) => total + atual, 0) é usado para somar as três maiores notas.
+A soma das notas é 7 + 8 + 9 = 24.
+A média é então calculada como 24 / 3 = 8.
+Retorno do Resultado:
+
+A função calculaMediaValida retorna a média calculada, que neste exemplo é 8.
+Então, o conjunto de notas [8, 7, 9, 6, 10] passa por uma ordenação, a remoção da menor nota (6), 
+e o cálculo da média das três maiores notas (7, 8, 9) na função calculaMediaValida. 
+O resultado final seria a média válida 8.*/
 
     obtemNomeAtleta(){
         console.log(`Nome: ${this.nome}`)
